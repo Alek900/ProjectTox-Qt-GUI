@@ -23,9 +23,9 @@ EmojiFontComboBox::EmojiFontComboBox(QWidget *parent) :
     QStringList emoticonFonts;
     QFontDatabase db;
     QFont f;
+    QFontMetrics fm (f);
     for (QString &family : db.families()) {
         f.setFamily(family);
-        QFontMetrics fm (f);
         // Emoticons, Range: 1F600–1F64F
         // http://www.unicode.org/charts/PDF/U1F600.pdf
         // check if a font has Emoticons support
